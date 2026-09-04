@@ -154,6 +154,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
         .text-highlight {
           background: linear-gradient(135deg, var(--primary) 0%, var(--accent-amber) 100%);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
         }
         .hero-description {
