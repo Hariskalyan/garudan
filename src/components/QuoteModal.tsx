@@ -147,10 +147,8 @@ ${formData.notes ? `- Notes: ${formData.notes}` : ''}`;
                   >
                     <option value="Double Axle Flatbed (28T)">Double Axle Flatbed (28T)</option>
                     <option value="Triple Axle Heavy Trailer (42T)">Triple Axle Heavy Trailer (42T)</option>
-                    <option value="20ft Twin ISO Container Chassis">20ft Twin ISO Container Chassis</option>
-                    <option value="40ft High Cube Container Chassis">40ft High Cube Container Chassis</option>
-                    <option value="Triple Axle Lowbed (55T)">Triple Axle Lowbed (55T)</option>
-                    <option value="Multi-Axle Heavy Hydraulic (100T)">Multi-Axle Heavy Hydraulic (100T)</option>
+                    <option value="Containers">Containers</option>
+                   
                   </select>
                 </div>
 
@@ -165,7 +163,6 @@ ${formData.notes ? `- Notes: ${formData.notes}` : ''}`;
                     <option value="15 - 28 Tons (Double Axle)">15 - 28 Tons (Double Axle)</option>
                     <option value="28 - 42 Tons (Triple Axle)">28 - 42 Tons (Triple Axle)</option>
                     <option value="42 - 60 Tons Heavy">42 - 60 Tons Heavy</option>
-                    <option value="60+ Tons Multi-Axle">60+ Tons Multi-Axle</option>
                   </select>
                 </div>
               </div>
