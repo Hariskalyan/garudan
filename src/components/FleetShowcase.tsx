@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Truck, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Truck, ArrowRight, CheckCircle2, Maximize2, X } from 'lucide-react';
 import { FLEET_DATA } from '../data/mockData';
+import type { FleetItem } from '../data/mockData';
 
 interface FleetShowcaseProps {
   onOpenQuote: () => void;
@@ -8,6 +9,7 @@ interface FleetShowcaseProps {
 
 export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => {
   const [filter, setFilter] = useState<string>('all');
+  const [activeModalImage, setActiveModalImage] = useState<FleetItem | null>(null);
 
   const filteredFleet = filter === 'all'
     ? FLEET_DATA
@@ -18,19 +20,19 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
       <div className="container">
         <div className="section-header">
           <span className="badge badge-emerald">
-            <Truck size={14} /> Double & Triple Axle Trailer Fleet
+            <Truck size={14} /> Company-Owned Heavy Fleet
           </span>
-          <h2>Garudan Trailers & Container Fleet</h2>
-          <p>Explore our company-owned Double Axle Trailers, Triple Axle Heavy Trailers, and 20ft & 40ft High Cube Container Chassis.</p>
+          <h2>Garudan Heavy Trailers & Express Carriers</h2>
+          <p>Verified authentic fleet photos of Garudan Transport's heavy trailers, goods carriers, and bulk tankers operating pan-India.</p>
         </div>
 
         {/* Filter Bar */}
         <div className="filter-bar">
           {[
-            { id: 'all', label: 'All Fleet Trailers' },
-            { id: 'double-axle', label: 'Double Axle Trailers' },
-            { id: 'triple-axle', label: 'Triple Axle Trailers' },
-            { id: 'container', label: 'Container Chassis Trailers' },
+            { id: 'all', label: 'All Garudan Fleet' },
+            { id: 'triple-axle', label: 'Heavy Duty Trailers' },
+            { id: 'double-axle', label: 'Express Goods Carriers' },
+            { id: 'tanker', label: 'Gas & Liquid Tankers' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -46,13 +48,17 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
         <div className="fleet-grid">
           {filteredFleet.map((vehicle) => (
             <div key={vehicle.id} className="fleet-card glass-card">
-              <div className="card-image-wrapper">
+              <div className="card-image-wrapper" onClick={() => setActiveModalImage(vehicle)}>
                 <img src={vehicle.image} alt={vehicle.name} className="fleet-img" />
                 <div className="image-overlay"></div>
+                
                 <span className={`status-tag ${vehicle.status === 'Available' ? 'available' : 'on-route'}`}>
                   <span className="dot"></span> {vehicle.status}
                 </span>
-                <span className="category-tag">{vehicle.category.replace('-', ' ').toUpperCase()}</span>
+
+                <button className="zoom-btn" title="View High-Res Photo">
+                  <Maximize2 size={16} />
+                </button>
               </div>
 
               <div className="card-body">
@@ -66,7 +72,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
                     <span className="spec-val">{vehicle.capacity}</span>
                   </div>
                   <div className="spec-box">
-                    <span className="spec-label">Bed / Chassis Length</span>
+                    <span className="spec-label">Body / Chassis Type</span>
                     <span className="spec-val">{vehicle.length}</span>
                   </div>
                 </div>
@@ -82,8 +88,8 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
                 </div>
 
                 <div className="card-footer">
-                  <button className="btn-secondary w-full" onClick={onOpenQuote}>
-                    Book This Trailer <ArrowRight size={16} />
+                  <button className="btn-primary w-full" onClick={onOpenQuote}>
+                    Book Transport Run <ArrowRight size={16} />
                   </button>
                 </div>
               </div>
@@ -91,6 +97,22 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
           ))}
         </div>
       </div>
+
+      {/* High Res Lightbox Modal */}
+      {activeModalImage && (
+        <div className="lightbox-backdrop" onClick={() => setActiveModalImage(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setActiveModalImage(null)}>
+              <X size={24} />
+            </button>
+            <img src={activeModalImage.image} alt={activeModalImage.name} className="lightbox-img" />
+            <div className="lightbox-caption">
+              <h3>{activeModalImage.name}</h3>
+              <p>{activeModalImage.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .fleet-section {
@@ -113,6 +135,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
           font-size: 0.9rem;
           font-weight: 600;
           transition: var(--transition);
+          cursor: pointer;
         }
         .filter-btn:hover, .filter-btn.active {
           background: var(--primary);
@@ -122,7 +145,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
         }
         .fleet-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
           gap: 32px;
         }
         .fleet-card {
@@ -132,8 +155,9 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
         }
         .card-image-wrapper {
           position: relative;
-          height: 220px;
+          height: 260px;
           overflow: hidden;
+          cursor: pointer;
         }
         .fleet-img {
           width: 100%;
@@ -167,29 +191,30 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
           color: #ffffff;
           backdrop-filter: blur(8px);
         }
-        .status-tag.on-route {
-          background: rgba(255, 170, 0, 0.85);
+        .zoom-btn {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.6);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           color: #ffffff;
-          backdrop-filter: blur(8px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        .card-image-wrapper:hover .zoom-btn {
+          opacity: 1;
         }
         .dot {
           width: 6px;
           height: 6px;
           border-radius: 50%;
           background: #ffffff;
-        }
-        .category-tag {
-          position: absolute;
-          bottom: 16px;
-          left: 16px;
-          background: rgba(0, 0, 0, 0.6);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          padding: 4px 10px;
-          border-radius: 4px;
-          font-size: 0.72rem;
-          font-weight: 700;
-          color: var(--accent-cyan);
-          letter-spacing: 0.05em;
         }
         .card-body {
           padding: 24px;
@@ -198,7 +223,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
           flex: 1;
         }
         .vehicle-title {
-          font-size: 1.25rem;
+          font-size: 1.2rem;
           margin-bottom: 8px;
         }
         .vehicle-desc {
@@ -224,7 +249,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
           margin-bottom: 2px;
         }
         .spec-val {
-          font-size: 0.92rem;
+          font-size: 0.9rem;
           font-weight: 700;
           color: #ffffff;
         }
@@ -247,6 +272,59 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
         }
         .card-footer {
           margin-top: auto;
+        }
+
+        /* Lightbox Modal */
+        .lightbox-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(5, 8, 15, 0.92);
+          backdrop-filter: blur(12px);
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+        }
+        .lightbox-content {
+          position: relative;
+          max-width: 900px;
+          width: 100%;
+          background: #0f172a;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+        }
+        .lightbox-close {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          background: rgba(0, 0, 0, 0.6);
+          border: none;
+          color: #ffffff;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 10;
+        }
+        .lightbox-img {
+          width: 100%;
+          max-height: 60vh;
+          object-fit: contain;
+          background: #000000;
+          display: block;
+        }
+        .lightbox-caption {
+          padding: 24px;
+        }
+        .lightbox-caption h3 {
+          font-size: 1.4rem;
+          margin-bottom: 6px;
         }
 
         @media (max-width: 768px) {

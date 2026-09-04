@@ -23,6 +23,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuote }) => {
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
+    { name: 'Leadership', href: '#leadership' },
+    { name: 'Our Fleet', href: '#fleet' },
     { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' },
   ];

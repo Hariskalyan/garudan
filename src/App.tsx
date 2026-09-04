@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { OwnerSection } from './components/OwnerSection';
+import { FleetShowcase } from './components/FleetShowcase';
 import { ServicesPortfolio } from './components/ServicesPortfolio';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -17,8 +19,14 @@ export function App() {
       {/* Navigation Bar */}
       <Header onOpenQuote={handleOpenQuote} />
 
-      {/* Hero Section */}
+      {/* Hero Section with Real Fleet & Founder Banner */}
       <Hero onOpenQuote={handleOpenQuote} />
+
+      {/* Founder & Leadership Spotlight (T. Gokulnath) */}
+      <OwnerSection />
+
+      {/* Real Garudan Heavy Fleet Showcase */}
+      <FleetShowcase onOpenQuote={handleOpenQuote} />
 
       {/* Transport Services */}
       <ServicesPortfolio onOpenQuote={handleOpenQuote} />
