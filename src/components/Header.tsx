@@ -158,6 +158,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuote }) => {
           display: flex;
           align-items: center;
           gap: 28px;
+          margin-left: auto;
+          margin-right: 28px;
         }
         .nav-link {
           font-size: 0.92rem;
