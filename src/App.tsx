@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { FleetShowcase } from './components/FleetShowcase';
 import { ServicesPortfolio } from './components/ServicesPortfolio';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -20,9 +19,6 @@ export function App() {
 
       {/* Hero Section */}
       <Hero onOpenQuote={handleOpenQuote} />
-
-      {/* Fleet Gallery & Specs Showcase (Double & Triple Axles & Containers) */}
-      <FleetShowcase onOpenQuote={handleOpenQuote} />
 
       {/* Transport Services */}
       <ServicesPortfolio onOpenQuote={handleOpenQuote} />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Truck, Phone, Menu, X, ArrowRight, MapPin } from 'lucide-react';
+import { Truck, Menu, X, ArrowRight } from 'lucide-react';
 
 interface HeaderProps {
   onOpenQuote: () => void;
@@ -23,32 +23,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuote }) => {
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
-    { name: 'Trailers & Fleet', href: '#fleet' },
     { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <>
-      {/* Top Notification Bar */}
-      <div className="top-bar">
-        <div className="container top-bar-inner">
-          <div className="top-bar-left">
-            <span className="badge badge-emerald">
-              <span className="pulse-dot"></span> Double & Triple Axle Trailer Specialist
-            </span>
-            <span className="top-text hide-mobile">
-              <MapPin size={13} className="inline-icon" /> Central Yard: NH-44 Transport Corridor
-            </span>
-          </div>
-          <div className="top-bar-right">
-            <a href="#contact" className="phone-link">
-              <Phone size={13} /> Contact & Mobile Nos. (Ready to Update)
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navbar */}
       <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container header-inner">
@@ -118,53 +98,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuote }) => {
       </header>
 
       <style>{`
-        .top-bar {
-          background: #04060c;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-          padding: 8px 0;
-          font-size: 0.8rem;
-          color: var(--text-muted);
-        }
-        .top-bar-inner {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        .top-bar-left, .top-bar-right {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-        }
-        .inline-icon {
-          vertical-align: middle;
-          margin-right: 4px;
-          color: var(--primary);
-        }
-        .pulse-dot {
-          width: 8px;
-          height: 8px;
-          background-color: var(--accent-emerald);
-          border-radius: 50%;
-          display: inline-block;
-          box-shadow: 0 0 8px var(--accent-emerald);
-          animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-          0% { opacity: 0.4; }
-          50% { opacity: 1; }
-          100% { opacity: 0.4; }
-        }
-        .phone-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          color: var(--accent-amber);
-          font-weight: 600;
-          transition: var(--transition);
-        }
-        .phone-link:hover {
-          color: #ffffff;
-        }
         .header {
           position: sticky;
           top: 0;

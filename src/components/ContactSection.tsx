@@ -84,19 +84,10 @@ export const ContactSection: React.FC = () => {
         </div>
 
         <div className="contact-wrapper">
-          {/* Contact Details & Mobile Number Placeholder Box */}
+          {/* Contact Details Office Card */}
           <div className="contact-info-card glass-card">
             <h3 className="card-title">Central Dispatch Office</h3>
             <p className="card-subtitle">Operational 24 Hours / 7 Days a Week</p>
-
-            {/* Note highlighting future mobile numbers */}
-            <div className="contact-editable-notice">
-              <AlertCircle size={18} className="notice-icon" />
-              <div>
-                <strong>Phone & Mobile Numbers Slot:</strong>
-                <p>Mobile numbers & direct dispatch lines can be easily updated in <code>mockData.ts</code>.</p>
-              </div>
-            </div>
 
             <div className="info-list">
               <div className="info-item">
@@ -106,7 +97,6 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <div className="info-label">Primary Mobile / Hotline</div>
                   <div className="info-val">{COMPANY_DETAILS.contactInfo.primaryPhone}</div>
-                  <span className="editable-contact-badge mt-1">Ready for your Mobile No.</span>
                 </div>
               </div>
 
@@ -117,7 +107,6 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <div className="info-label">Secondary Mobile / Dispatch</div>
                   <div className="info-val">{COMPANY_DETAILS.contactInfo.secondaryPhone}</div>
-                  <span className="editable-contact-badge mt-1">Ready for Alternate No.</span>
                 </div>
               </div>
 

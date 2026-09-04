@@ -34,19 +34,18 @@ export const Footer: React.FC = () => {
             <h4 className="footer-heading">Navigation</h4>
             <ul className="footer-links">
               <li><a href="#hero">Home</a></li>
-              <li><a href="#fleet">Double & Triple Axles</a></li>
-              <li><a href="#services">Trailer Freight Services</a></li>
-              <li><a href="#contact">Contact & Mobile Numbers</a></li>
+              <li><a href="#services">Freight Services</a></li>
+              <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Trailer Fleet */}
+          {/* Column 3: Trailer Transport */}
           <div className="footer-col">
-            <h4 className="footer-heading">Trailer Rigs</h4>
+            <h4 className="footer-heading">Services</h4>
             <ul className="footer-links">
-              <li><a href="#fleet">Double Axle High-Bed Trailer</a></li>
-              <li><a href="#fleet">Triple Axle Super-Duty Heavy Trailer</a></li>
-              <li><a href="#fleet">40ft High Cube Container Chassis</a></li>
+              <li><a href="#services">Double Axle Trailer Freight</a></li>
+              <li><a href="#services">Triple Axle Heavy Run</a></li>
+              <li><a href="#services">Container Chassis Drayage</a></li>
             </ul>
           </div>
 

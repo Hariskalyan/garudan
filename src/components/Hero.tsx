@@ -33,7 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
           </h1>
 
           <p className="hero-description">
-            Specialized fleet of Double Axle Trailers, Triple Axle Heavy Rigs, 20ft & 40ft High Cube Container Chassis for heavy industry, port drayage, and pan-India freight delivery.
+            Specialized fleet of Double Axle Trailers, Triple Axle Heavy Trailers, 20ft & 40ft High Cube Container Chassis for heavy industry, port drayage, and pan-India freight delivery.
           </p>
 
           {/* Action Buttons */}
@@ -42,18 +42,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
               <Truck size={20} /> Request Trailer Quote <ArrowRight size={18} />
             </button>
 
-            <a href="#fleet" className="btn-secondary hero-btn">
-              <Layers size={19} /> View Double & Triple Axle Rigs
+            <a href="#services" className="btn-secondary hero-btn">
+              <Layers size={19} /> View Freight Services
             </a>
           </div>
 
-          {/* Quick Contact & Number Banner Notice */}
+          {/* Quick Contact Banner */}
           <div className="contact-placeholder-banner">
             <div className="placeholder-icon">
               <MapPin size={18} />
             </div>
             <div className="placeholder-text">
-              <strong>Garudan Dispatch Central:</strong> Contact & Mobile numbers will be configured here for direct 24/7 hotline access.
+              <strong>Namakkal Central Dispatch:</strong> {COMPANY_DETAILS.contactInfo.address} • Call <strong>{COMPANY_DETAILS.contactInfo.primaryPhone}</strong> / <strong>{COMPANY_DETAILS.contactInfo.secondaryPhone}</strong>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
               <ShieldCheck size={28} />
             </div>
             <div className="stat-number">{COMPANY_DETAILS.stats.activeFleet}</div>
-            <div className="stat-label">Active Heavy Rigs</div>
+            <div className="stat-label">Active Heavy Trailers</div>
             <div className="stat-sub">Double & Triple Axles</div>
           </div>
 
@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
       <style>{`
         .hero-section {
           position: relative;
-          padding: 80px 0 100px 0;
+          padding: 12px 0 36px 0;
           overflow: hidden;
           background: linear-gradient(180deg, #070a11 0%, #0b111e 100%);
         }

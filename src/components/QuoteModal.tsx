@@ -13,7 +13,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     pickup: '',
     destination: '',
-    cargoType: 'Double Axle Trailer (28T)',
+    cargoType: 'Double Axle',
     weight: '15 - 30 Tons',
     pickupDate: '',
     name: '',
@@ -42,7 +42,7 @@ ${formData.notes ? `- Notes: ${formData.notes}` : ''}`;
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name.trim() || 'Quote Requester',
-          email: formData.email.trim() || 'quote-inquiry@garudantrans.com',
+          email: formData.email.trim() || 'garudanbrothers1251@gmail.com',
           phone: formData.mobile.trim(),
           message: messageText
         }),
@@ -145,10 +145,9 @@ ${formData.notes ? `- Notes: ${formData.notes}` : ''}`;
                     onChange={(e) => setFormData({ ...formData, cargoType: e.target.value })}
                     className="form-input"
                   >
-                    <option value="Double Axle Flatbed (28T)">Double Axle Flatbed (28T)</option>
-                    <option value="Triple Axle Heavy Trailer (42T)">Triple Axle Heavy Trailer (42T)</option>
-                    <option value="Containers">Containers</option>
-                   
+                    <option value="Double Axle">Double Axle</option>
+                    <option value="Triple Axle">Triple Axle</option>
+                    <option value="Container">Container</option>
                   </select>
                 </div>
 

@@ -20,14 +20,14 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
           <span className="badge badge-emerald">
             <Truck size={14} /> Double & Triple Axle Trailer Fleet
           </span>
-          <h2>Garudan Trailer Rigs & Container Chassis</h2>
-          <p>Explore our company-owned Double Axle Trailers, Triple Axle Heavy Rigs, and 20ft & 40ft High Cube Container Chassis.</p>
+          <h2>Garudan Trailers & Container Fleet</h2>
+          <p>Explore our company-owned Double Axle Trailers, Triple Axle Heavy Trailers, and 20ft & 40ft High Cube Container Chassis.</p>
         </div>
 
         {/* Filter Bar */}
         <div className="filter-bar">
           {[
-            { id: 'all', label: 'All Fleet Rigs' },
+            { id: 'all', label: 'All Fleet Trailers' },
             { id: 'double-axle', label: 'Double Axle Trailers' },
             { id: 'triple-axle', label: 'Triple Axle Trailers' },
             { id: 'container', label: 'Container Chassis Trailers' },
@@ -83,7 +83,7 @@ export const FleetShowcase: React.FC<FleetShowcaseProps> = ({ onOpenQuote }) => 
 
                 <div className="card-footer">
                   <button className="btn-secondary w-full" onClick={onOpenQuote}>
-                    Book This Trailer Rig <ArrowRight size={16} />
+                    Book This Trailer <ArrowRight size={16} />
                   </button>
                 </div>
               </div>

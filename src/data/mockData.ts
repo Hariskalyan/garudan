@@ -32,13 +32,13 @@ export const COMPANY_DETAILS = {
     safetyRating: "100%"
   },
   contactInfo: {
-    primaryPhone: "+91 XXXXX XXXXX",
-    secondaryPhone: "+91 YYYYY YYYYY",
-    whatsappNumber: "+91 XXXXX XXXXX",
-    email: "contact@garudanbrotherstransport.com",
-    supportEmail: "dispatch@garudanbrotherstransport.com",
-    address: "Garudan Transport Logistics Park, Highway 44 Transport Corridor",
-    headOffice: "Garudan Transport Central Fleet Yard",
+    primaryPhone: "+91 93451 52717",
+    secondaryPhone: "+91 63828 84563",
+    whatsappNumber: "+91 93451 52717",
+    email: "garudanbrothers1251@gmail.com",
+    supportEmail: "hariskalyanselvaraj@gmail.com",
+    address: "C E B Colony, Back side to Maharisi Medical, Paramathi Rd, Namakkal, Tamil Nadu 637001",
+    headOffice: "C E B Colony, Back side to Maharisi Medical, Paramathi Rd, Namakkal, Tamil Nadu 637001",
     operatingHours: "24/7 Dispatch & Fleet Operations"
   }
 };
@@ -86,7 +86,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: "Truck",
     shortDesc: "Dedicated double axle high-bed & flatbed trailer transport for standard and medium heavy freight.",
     fullDesc: "Reliable 22-28 ton payload capacity. Perfect for steel coils, bagged cargo, industrial pipes, and manufacturing goods.",
-    highlights: ["22-28 Ton Payload Capacity", "32ft Flatbed & High-Bed Rigs", "Point-to-Point Direct Linehaul", "GPS Telematics Tracking"],
+    highlights: ["22-28 Ton Payload Capacity", "32ft Flatbed & High-Bed Trailers", "Point-to-Point Direct Linehaul", "GPS Telematics Tracking"],
     badge: "Double Axle"
   },
   {
