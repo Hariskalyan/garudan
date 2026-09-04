@@ -29,7 +29,7 @@ export const COMPANY_DETAILS = {
     title: "Managing Director",
     image: "/images/naveen-owner.jpg",
     bio: "Under the leadership of Managing Director T. Naveen, Garudan Logistics & Transport operates an elite company-owned fleet of heavy trailers, container chassis, and bulk liquid tankers committed to 100% safe, on-time delivery across South India and pan-India routes.",
-    phone: "+91 93451 52717"
+    phone: "+91 63822 23965"
   },
   stats: {
     tripsCompleted: "85,000+",
@@ -39,13 +39,13 @@ export const COMPANY_DETAILS = {
     safetyRating: "100%"
   },
   contactInfo: {
-    primaryPhone: "+91 93451 52717",
-    secondaryPhone: "+91 63828 84563",
-    whatsappNumber: "+91 93451 52717",
+    primaryPhone: "+91 63822 23965",
+    secondaryPhone: "+91 81225 51251",
+    whatsappNumber: "+91 63822 23965",
     email: "garudanbrothers1251@gmail.com",
     supportEmail: "hariskalyanselvaraj@gmail.com",
-    address: "No.6/1065 P.S.A Complex, E.B Colony, Paramathi Road, Namakkal, Tamil Nadu",
-    headOffice: "No.6/1065 P.S.A Complex, E.B Colony, Paramathi Road, Namakkal, Tamil Nadu",
+    address: "Garudan Brothers Transport, No.6/1065 P.S.A Complex, E.B Colony, Paramathi Road, Namakkal, Tamil Nadu",
+    headOffice: "Garudan Brothers Transport, No.6/1065 P.S.A Complex, E.B Colony, Paramathi Road, Namakkal, Tamil Nadu",
     operatingHours: "24/7 Dispatch & Fleet Operations"
   }
 };
